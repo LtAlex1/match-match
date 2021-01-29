@@ -3,6 +3,8 @@ import React from 'react'
 import Difficult from './staticWelcomPage/Difficult'
 import ShirtType from './staticWelcomPage/ShirtType'
 import RegistrationForm from './registration/RegistrationForm'
+import Rules from './staticWelcomPage/Rules'
+import StartGame from './staticWelcomPage/StartGameButton'
 export default function ContainerWelcomPage(){
 
 
@@ -14,14 +16,13 @@ export default function ContainerWelcomPage(){
                 <RegistrationForm/>
                 <Difficult/>
                 <ShirtType/>
+                <Rules/>
+                <StartGame/>
             </div>
 
 
-            <div className='welcomPage__Rules'>
-                <h3>Statick text</h3>
-            </div>
 
-            <button>Start game</button>
+           
         </div>
     )
 }

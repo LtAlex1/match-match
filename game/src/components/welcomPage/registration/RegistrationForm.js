@@ -1,25 +1,28 @@
 import React from 'react'
 
+
 export default function RegistrationForm(){
 
 // Реализация стора ? для значений инпута Походу полюбому
 
    let handleChange = (event)=> {
         const target = event.target
+
             switch (target.name) {
                 case 'firstName':
                     return(
-                        toLocalSorage(target.name)
+                
+                        toLocalSorage(target.name,target.value)
                     )    
                     break;
                 case 'lastName':
                     return(
-                        toLocalSorage(target.name)
+                        toLocalSorage(target.name,target.value)
                     )    
                     break;
                 case 'email':
                     return(
-                        toLocalSorage(target.name)
+                        toLocalSorage(target.name,target.value)
                     )    
                     break;
 
@@ -29,10 +32,13 @@ export default function RegistrationForm(){
             } 
         }
 
-   let toLocalSorage = (item)=>{
-        let key = JSON.stringify(item)  
-        let value = JSON.stringify(item.value)
+   let toLocalSorage = (name , val)=>{
+     
+        let key = JSON.stringify(name)  
+        let value = JSON.stringify(val)
         localStorage.setItem(key, value)
+
+     
     }
 
     return(
@@ -49,7 +55,7 @@ export default function RegistrationForm(){
                 onChange={handleChange} />
                 
             <input 
-                type="email" 
+                type="text" 
                 name ="emailName"
                 // value={this.state.value} 
                 onChange={handleChange} />

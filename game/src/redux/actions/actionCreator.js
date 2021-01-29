@@ -1,4 +1,6 @@
 export const CHANGE_DIFFICULT = 'CHANGE_DIFFICULT'
+export const SHARE_TYPE = 'SHARE_TYPE'
+
 
 export function changeDifficult(levelType){
     return {
@@ -6,3 +8,12 @@ export function changeDifficult(levelType){
         payload: levelType
     }
 } 
+
+export function shareType(type){
+    return {
+        type: SHARE_TYPE,
+        payload: type
+    }
+}
+
+

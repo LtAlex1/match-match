@@ -1,15 +1,18 @@
 import React from 'react'
-import { useDispatch , useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import {shareType} from '../../../redux/actions/actionCreator'
 
 function ShirtType(){
     
     const dispatch = useDispatch()
+
     let clickEvent = (event)=>{
-        useDispatch()
+        let data = event.target.value
+        dispatch(shareType(data))
     }
 
     const typesName= ['STAR WARS', 'MARVEL' , 'WEB' ]
-    const buttonItem = typesName.map((item)=><button onClick={clickEvent}>{item}</button>)
+    const buttonItem = typesName.map((item)=><button value={item} onClick={clickEvent}>{item}</button>)
     return(
         <div>  
             {buttonItem}
