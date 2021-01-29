@@ -1,19 +1,15 @@
 import React from 'react'
-import { useDispatch  } from 'react-redux'
-import {changeDifficult}  from '../../../redux/actions/actionCreator'
 
 
-export default function Difficult(){
+export default function Difficult(props){
     
-    let dispatch = useDispatch()
+   
 
-   let  handleChange = (event)=>{
-             dispatch(changeDifficult(event.target.value))   
-    }
+
     return (
          <form >
             <label>Difficult:
-                <select  onChange={handleChange}>
+                <select  onChange={props.handleChange}>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option> 
