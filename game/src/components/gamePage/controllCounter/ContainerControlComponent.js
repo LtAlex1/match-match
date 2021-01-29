@@ -18,7 +18,6 @@ export default function ContainerControlComponent(){
 
     return(
         <div>
-            
             <Timer currentSecond = {currentSecond}/>
         </div>
     )

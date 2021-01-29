@@ -20,17 +20,18 @@ export default function ContainerWelcomPage(){
                     return(            
                         toLocalSorage(target.name,target.value)
                     )    
-                    break;
+                
                 case 'lastName':
                     return(
                         toLocalSorage(target.name,target.value)
                     )    
-                    break;
+                  
                 case 'emailName':
                     return(
                         toLocalSorage(target.name,target.value)
                     )    
-                    break;
+                default:
+                    break 
             }     
         }
    let toLocalSorage = (name , val)=>{    
