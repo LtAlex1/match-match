@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import {changeDifficultLevelReducer} from './difficultReducer'
+import changeDifficultLevelReducer from './difficultReducer'
 
 const rootReducers = combineReducers({
     selectRed: changeDifficultLevelReducer

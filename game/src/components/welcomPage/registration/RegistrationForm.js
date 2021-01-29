@@ -4,7 +4,7 @@ export default function RegistrationForm(){
 
 // Реализация стора ? для значений инпута Походу полюбому
 
-    handleChange(event){
+   let handleChange = (event)=> {
         const target = event.target
             switch (target.name) {
                 case 'firstName':
@@ -29,14 +29,14 @@ export default function RegistrationForm(){
             } 
         }
 
-    toLocalSorage(item){
+   let toLocalSorage = (item)=>{
         let key = JSON.stringify(item)  
         let value = JSON.stringify(item.value)
         localStorage.setItem(key, value)
     }
 
     return(
-            <form onSubmit={}>
+            <form >
             <input 
                 type="text"
                 name="firstName"

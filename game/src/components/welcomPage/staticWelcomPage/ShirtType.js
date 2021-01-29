@@ -4,7 +4,7 @@ import { useDispatch , useSelector } from 'react-redux'
 function ShirtType(){
     
     const dispatch = useDispatch()
-    clickEvent(event){
+    let clickEvent = (event)=>{
         useDispatch()
     }
 

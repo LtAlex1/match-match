@@ -1,6 +1,8 @@
 import React from 'react'
-
-
+// import from ''
+import Difficult from './staticWelcomPage/Difficult'
+import ShirtType from './staticWelcomPage/ShirtType'
+import RegistrationForm from './registration/RegistrationForm'
 export default function ContainerWelcomPage(){
 
 
@@ -8,7 +10,11 @@ export default function ContainerWelcomPage(){
         <div className='welcomPage__inner'>
             <h1> Welcom to MMG</h1>
 
-
+            <div>
+                <RegistrationForm/>
+                <Difficult/>
+                <ShirtType/>
+            </div>
 
 
             <div className='welcomPage__Rules'>
