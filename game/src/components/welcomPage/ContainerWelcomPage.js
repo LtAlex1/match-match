@@ -65,7 +65,7 @@ export default function ContainerWelcomPage(){
                 <ShirtType buttonItem = {buttonItem}/>
                 <Rules/>
                 <StartGame/>
-            </div>           
+            </div>             
         </div>
     )
 }
