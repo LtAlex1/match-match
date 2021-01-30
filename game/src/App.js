@@ -4,7 +4,6 @@ import ContainerGamePage from './components/gamePage/ContainerGamePage'
 
 
 
-// Тут я могу получать Local и если они есть то рисовать без регистрации
 
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
     <div> 
         <ContainerGamePage/>
     </div>
-  </>  
+</>  
 
 
   );

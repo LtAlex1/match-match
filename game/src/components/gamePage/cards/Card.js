@@ -1,27 +1,25 @@
-export function Card() {
- 
-          
-    return(
-        <div className="card">
-            {/* <button>a</button>
+import React, {useState} from 'react'
 
-		<div className="card__inner">
-			<div className="card__face card__face--front">
-				<h2>Card Front</h2>
-			</div>
-			<div className="card__face card__face--back">
-				<div className="card__content">
-					<div className="card__header">
-						<img src="pp.jpg" alt="" className="pp" />
-						<h2>Tyler Potts</h2>
-					</div>
-					<div className="card__body">
-						<h3>JavaScript Wizard</h3>
-					</div>
-				</div>
-			</div>
-		</div> */}
-	</div>
-    )
 
+
+export default function Card({itemData}) {
+
+	const [flip,setFlip]=useState(false)
+
+	return (
+		<div className={`card ${flip ? 'flip' : ''}`}
+			 onClick={()=>setFlip(!flip)}>	
+			
+		<div className='front'>
+            <div className='flashCard-options'>
+				{itemData.front}
+            </div>
+        </div>
+
+        <div className ='back'>
+                {itemData.back}
+        </div>
+
+		</div>
+	)
 }
