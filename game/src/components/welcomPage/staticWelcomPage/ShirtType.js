@@ -1,14 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-function ShirtType(props){
+function ShirtType({typesName, clickEvent}){
     
+const buttonItem = typesName.map((item)=><button value={item} onClick={clickEvent}>{item}</button>)
 
     return(
         <div>  
-            {props.buttonItem}
+            {buttonItem}
         </div>
     )
 }
-
 export default ShirtType

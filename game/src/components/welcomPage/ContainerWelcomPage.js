@@ -34,7 +34,7 @@ export default function ContainerWelcomPage(){
                     break 
             }     
         }
-   let toLocalSorage = (name , val)=>{    
+    let toLocalSorage = (name , val)=>{    
         let key = JSON.stringify(name)  
         let value = JSON.stringify(val)
         localStorage.setItem(key, value)  
@@ -42,18 +42,16 @@ export default function ContainerWelcomPage(){
 
     //Difficult
     let dispatch = useDispatch()
-    let  difficultChandleChange = (event)=>{
+    let difficultChandleChange = (event)=>{
         dispatch(changeDifficult(event.target.value))   
 }
     //ShareType
-
-    let clickEvent = (event)=>{
+    let typeChangeClickEvent = (event)=>{
         let data = event.target.value
         dispatch(shareType(data))
     }
-
+   
     const typesName= ['STAR WARS', 'MARVEL' , 'WEB' ]
-    const buttonItem = typesName.map((item)=><button value={item} onClick={clickEvent}>{item}</button>)
 
 
     return (     
@@ -63,7 +61,7 @@ export default function ContainerWelcomPage(){
             <div>
                 <RegistrationForm handleChange = {handleChangeRegistrationForm} localStorage={toLocalSorage}/>
                 <Difficult handleChange = {difficultChandleChange}/>
-                <ShirtType buttonItem = {buttonItem}/>
+                <ShirtType typesName = {typesName} clickEvent = {typeChangeClickEvent}/>
                 <Rules/>
                 <StartGame/>
             </div>             

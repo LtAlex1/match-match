@@ -2,17 +2,14 @@ import React from 'react'
 
 
 export default function Difficult(props){
-    
-   
-
 
     return (
          <form >
             <label>Difficult:
                 <select  onChange={props.handleChange}>
-                        <option value="Easy">Easy</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Hard">Hard</option> 
+                        <option value='16'>Easy</option>
+                        <option value="36">Medium</option>
+                        <option value="64">Hard</option> 
                 </select>
             </label>
         </form>

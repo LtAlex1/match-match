@@ -7,18 +7,15 @@ import ContainerGamePage from './components/gamePage/ContainerGamePage'
 
 
 function App() {
-  return (
- 
-<>
-    <div className="App">
-        <ContainerWelcomPage/>
-    </div>
-    <div> 
-        <ContainerGamePage/>
-    </div>
-</>  
-
-
+  return ( 
+    <>
+        <div className="App">
+            <ContainerWelcomPage/>
+        </div>
+        <div> 
+            <ContainerGamePage/>
+        </div>
+    </>  
   );
 }
 

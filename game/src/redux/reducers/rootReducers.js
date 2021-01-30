@@ -9,4 +9,3 @@ const rootReducers = combineReducers({
 })
 
 export default rootReducers
-// УБРАЛ ИЗ СТРО РЕДЮС
