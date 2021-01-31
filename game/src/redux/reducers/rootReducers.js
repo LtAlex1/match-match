@@ -4,7 +4,7 @@ import hareTypeReducer from './shirtTypeReducers'
 
 
 const rootReducers = combineReducers({
-    selectRed: changeDifficultLevelReducer,
+    difficultReducer: changeDifficultLevelReducer,
     shirtType: hareTypeReducer
 })
 

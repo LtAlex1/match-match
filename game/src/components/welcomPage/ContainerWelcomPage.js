@@ -50,7 +50,6 @@ export default function ContainerWelcomPage(){
         let data = event.target.value
         dispatch(shareType(data))
     }
-   
     const typesName= ['STAR WARS', 'MARVEL' , 'WEB' ]
 
 

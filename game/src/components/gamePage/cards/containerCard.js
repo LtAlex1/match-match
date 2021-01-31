@@ -3,7 +3,7 @@ import Card from './Card'
 import '../../../css/card.css'
 
 export default function ContainerCard(){
-    const value = useSelector(state => state.selectRed.level)
+    const value = useSelector((state) => state.difficultReducer.level)
 
     return(
         <div className='card-grid'>  
