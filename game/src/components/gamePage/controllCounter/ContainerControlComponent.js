@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import StepsCount from "./StepsCount";
 import Timer from './Timer'
 
 
@@ -19,6 +20,7 @@ export default function ContainerControlComponent(){
     return(
         <div>
             <Timer currentSecond = {currentSecond}/>
+            <StepsCount/>
         </div>
     )
 }

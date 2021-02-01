@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 // import from ''
 import Difficult from './staticWelcomPage/Difficult'
 import ShirtType from './staticWelcomPage/ShirtType'
@@ -8,11 +8,26 @@ import StartGame from './staticWelcomPage/StartGameButton'
 import { useDispatch  } from 'react-redux'
 import {changeDifficult}  from '../../redux/actions/actionCreator'
 import {shareType} from '../../redux/actions/actionCreator'
+import {storageFullness} from '../../redux/actions/actionCreator'
+import Header from './Header'
+
 
 
 
 export default function ContainerWelcomPage(){
+    let dispatch = useDispatch()
 
+//==============================LOCAL GET && SET=========================================      
+    let data = JSON.parse(localStorage.getItem("firstName")) 
+    console.log(data)
+ 
+
+    let toLocalSorage = (name , val)=>{    
+    let key = name  
+    let value = JSON.stringify(val)
+        localStorage.setItem(key, value)  
+    }
+// =============================WORK WITH LOCAL======================================
     let handleChangeRegistrationForm = (event)=> {
         const target = event.target
             switch (target.name) {
@@ -34,14 +49,24 @@ export default function ContainerWelcomPage(){
                     break 
             }     
         }
-    let toLocalSorage = (name , val)=>{    
-        let key = JSON.stringify(name)  
-        let value = JSON.stringify(val)
-        localStorage.setItem(key, value)  
-    }
+     
+        dispatch(storageFullness(data ))
+        
+    // useEffect(()=>{
+    //     function getLocalStorageData (){
+    //         let data = localStorage.getItem("lastName")
+    //         console.log(data)
+    //           if(data){
+    //               dispatch(storageFullness('true'))
+    //           }
+    //       }
+        
+    // },[data]) 
+
+
+
 
     //Difficult
-    let dispatch = useDispatch()
     let difficultChandleChange = (event)=>{
         dispatch(changeDifficult(event.target.value))   
 }
@@ -55,15 +80,16 @@ export default function ContainerWelcomPage(){
 
     return (     
         <div className='welcomPage__inner'>
-            <h1> Welcom to MMG</h1>
-
+                {data ? <Header/> : <RegistrationForm handleChange = {handleChangeRegistrationForm} localStorage={toLocalSorage}/> }
             <div>
-                <RegistrationForm handleChange = {handleChangeRegistrationForm} localStorage={toLocalSorage}/>
+                
+                
                 <Difficult handleChange = {difficultChandleChange}/>
                 <ShirtType typesName = {typesName} clickEvent = {typeChangeClickEvent}/>
                 <Rules/>
                 <StartGame/>
-            </div>             
+            </div>    
+
         </div>
     )
 }

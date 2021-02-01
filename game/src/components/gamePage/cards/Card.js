@@ -6,9 +6,6 @@ export default function Card({obj}) {
 
 	const [flip,setFlip]=useState(false)
 
-	console.log(obj)
-	// console.log(obj.id)
-
 	return (
 	<div className={`card ${flip ? 'flip' : ''}`}
 			 onClick={()=>setFlip(!flip)}>	
@@ -20,8 +17,7 @@ export default function Card({obj}) {
             </div>
         </div>
 
-        <div className ='back' style = {{background: obj.src ,backgroundPosition: 'center', zIndex: 100}}>
-         
+        <div className ='back' style = {{background: obj.src ,backgroundPosition: 'center', zIndex: 100}}>   
 			<img src={obj.src}/>
         </div>
 
