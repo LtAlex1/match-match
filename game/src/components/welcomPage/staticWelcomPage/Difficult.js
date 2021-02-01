@@ -7,9 +7,9 @@ export default function Difficult(props){
          <form >
             <label>Difficult:
                 <select  onChange={props.handleChange}>
-                        <option value='16'>Easy</option>
-                        <option value="36">Medium</option>
-                        <option value="64">Hard</option> 
+                        <option value='8'>Easy</option>
+                        <option value="18">Medium</option>
+                        <option value="32">Hard</option> 
                 </select>
             </label>
         </form>

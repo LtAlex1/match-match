@@ -2,9 +2,12 @@ import React, {useState} from 'react'
 
 
 
-export default function Card() {
+export default function Card({obj}) {
 
 	const [flip,setFlip]=useState(false)
+
+	console.log(obj)
+	// console.log(obj.id)
 
 	return (
 	<div className={`card ${flip ? 'flip' : ''}`}
@@ -13,11 +16,13 @@ export default function Card() {
 		<div className='front'>
             <div className='flashCard-options'>
 				FRONT
+				{obj.id}
             </div>
         </div>
 
-        <div className ='back'>
-                BACK
+        <div className ='back' style = {{background: obj.src ,backgroundPosition: 'center', zIndex: 100}}>
+         
+			<img src={obj.src}/>
         </div>
 
 	</div>
