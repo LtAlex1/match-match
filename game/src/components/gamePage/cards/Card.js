@@ -1,27 +1,41 @@
-export function Card() {
- 
-          
-    return(
-        <div className="card">
-            {/* <button>a</button>
+import React, {useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import {flipCheck} from '../../../redux/actions/actionCreator'
 
-		<div className="card__inner">
-			<div className="card__face card__face--front">
-				<h2>Card Front</h2>
-			</div>
-			<div className="card__face card__face--back">
-				<div className="card__content">
-					<div className="card__header">
-						<img src="pp.jpg" alt="" className="pp" />
-						<h2>Tyler Potts</h2>
-					</div>
-					<div className="card__body">
-						<h3>JavaScript Wizard</h3>
-					</div>
-				</div>
-			</div>
-		</div> */}
+export default function Card({obj}) {
+
+	const [flip,setFlip]=useState(false)
+	
+//-------------------------------------------------
+// 
+	// obj.id + flip(true/false)
+	const state = useSelector(state => state.flipReducer.id)
+	const dispatch = useDispatch()
+
+	const arr = []
+	arr.push(state)
+	console.log(arr)
+//-------------------------------------------------
+
+
+
+	return (
+	<div className={`card ${flip ? 'flip' : ''} ${obj.id}`}
+			 onClick={()=>{setFlip(!flip)
+			dispatch(flipCheck(obj.id,flip))
+			 }}>	
+		
+		<div className='front'>
+            <div className='flashCard-options'>
+				FRONT
+				{obj.id}
+            </div>
+        </div>
+
+        <div className ='back' style = {{background: obj.src ,backgroundPosition: 'center', zIndex: 100}}>   
+			<img src={obj.src}/>
+        </div>
+
 	</div>
-    )
-
+	)
 }

@@ -1,29 +1,27 @@
 import React from 'react'
+import Header from '../Header'
 
 
 export default function RegistrationForm(props){
 
-// Реализация стора ? для значений инпута Походу полюбому
-
-
     return(
+        <>
+        <Header/>
             <form >
             <input 
                 type="text"
                 name="firstName"
-                // value={this.state.value} 
                 onChange={props.handleChange} />
             <input 
                 type="text" 
                 name ="lastName"
-                // value={this.state.value} 
                 onChange={props.handleChange} />
                 
             <input 
-                type="text" 
+                type="email" 
                 name ="emailName"
-                // value={this.state.value} 
                 onChange={props.handleChange} />
-            </form>    
+            </form>  
+        </>      
     )
 }
