@@ -14,7 +14,7 @@ export default function ContainerWelcomPageWithUserData() {
     //Difficult
         let difficultChandleChange = (event)=>{
         dispatch(changeDifficult(event.target.value))   
-
+        }
     //ShareType
         let typeChangeClickEvent = (event)=>{
             let data = event.target.value
@@ -30,6 +30,6 @@ export default function ContainerWelcomPageWithUserData() {
             <Rules/>
             <StartGame/>
         </div>
-    )
-    }
+        )
+    
 }

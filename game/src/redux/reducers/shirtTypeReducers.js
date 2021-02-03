@@ -1,7 +1,7 @@
 import {SHARE_TYPE} from '../actions/actionCreator'
 
 let initialState = {
-    shareType: 'unknow'
+    shareType: ''
 }
 
  const shareTypeReducer = (state =initialState,action) => {
