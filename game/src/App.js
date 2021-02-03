@@ -13,7 +13,6 @@ import ContainerGamePage from './components/gamePage/ContainerGamePage';
 function App() {
   const history = useHistory()
   let dispatch = useDispatch()
-
 //==============================LOCAL GET && SET=========================================      
   useEffect(()=>{
       let data = JSON.parse(localStorage.getItem("firstName"))
@@ -29,10 +28,10 @@ function App() {
   return (     
      <Router>
       <Switch>
-        <Route path='/' exact component={<ContainerRegistrationPage/>}/>
-        <Route path='/welcome' component={<ContainerWelcomPageWithUserData/>}/>
-        <Route path='/game' component={<ContainerGamePage/>}/>
-        <Route component ={<ComponentNotFound/>}/>
+        <Route path='/' exact component={ContainerRegistrationPage}/>
+        <Route path='/welcome' component={ContainerWelcomPageWithUserData}/>
+        <Route path='/game' component={ContainerGamePage}/>
+        <Route component ={ComponentNotFound}/>
       </Switch>      
     </Router>
   );
