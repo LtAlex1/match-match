@@ -18,7 +18,6 @@ export default function ContainerCard(){
     let arrayUp = arr.concat(arr)
    
     // --------------------WORK RANDOMIZER------------------------------
-  
     function shuffle(array){
       let j, temp;
       for(let i = array.length - 1; i > 0; i--){
@@ -32,7 +31,7 @@ export default function ContainerCard(){
     //-------------------------------------------------------
     let duplicateArray = shuffle(arrayUp)
 
-   
+    
     return(
         <div className='card-grid'>  
          {duplicateArray.map((item)=>  <Card obj ={item}/>

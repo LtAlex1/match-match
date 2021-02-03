@@ -4,7 +4,6 @@ import Header from '../Header'
 
 export default function RegistrationForm(props){
 
-
     return(
         <>
         <Header/>

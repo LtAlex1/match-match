@@ -1,6 +1,17 @@
 export const CHANGE_DIFFICULT = 'CHANGE_DIFFICULT'
 export const SHARE_TYPE = 'SHARE_TYPE'
 export const STORAGE_FULLNES = 'STORAGE_FULLNES'
+//---------------------------
+export const FLIP_CHECK = 'FLIP_CHECK'
+
+export function flipCheck(flipId,flip){
+    return {
+        type : FLIP_CHECK,
+        flipId: flipId,
+        flip: flip,
+
+    }
+}
 
 export function changeDifficult(levelType){
     return {
