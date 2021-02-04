@@ -1,30 +1,33 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {flipCheck} from '../../../redux/actions/actionCreator'
 
 export default function Card({obj}) {
 
 	const [flip,setFlip]=useState(false)
-	
+	const [arrayChek,setArrayCheck] = useState([])
 //-------------------------------------------------
-// 
+// 	// const arr = []
+	// arr.push(state)
+	// console.log(arr)
 	// obj.id + flip(true/false)
-	const state = useSelector(state => state.flipReducer.id)
-	const typeShirt = useSelector(state => state.shirtType.shareType)
+	// const state = useSelector(state => state.flipReducer.id)
+		// dispatch(flipCheck(obj.id,flip))
+			// console.log(flip)
+	// console.log(obj.id)
 	const dispatch = useDispatch()
 
-	const arr = []
-	arr.push(state)
-	console.log(arr)
+
 //-------------------------------------------------
-
-
+useEffect(() => {
+	let upDateList = [...arrayChek,obj]
+	setArrayCheck(upDateList)
+	console.log(arrayChek)	
+}, [flip])
 
 	return (
 	<div className={`card ${flip ? 'flip' : ''} ${obj.id}`}
-			 onClick={()=>{setFlip(!flip)
-			dispatch(flipCheck(obj.id,flip))
-			 }}>	
+			 onClick={()=>{setFlip(!flip)}}>	
 		
 		<div className='front' style = {{background: obj.frontSrc ,backgroundPosition: 'center'}}>
 		
