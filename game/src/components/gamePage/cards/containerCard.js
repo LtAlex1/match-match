@@ -5,13 +5,17 @@ import '../../../css/card.css'
 
 export default function ContainerCard(){
     const difficultValue = useSelector((state) => state.difficultReducer.level)
+    const shiftTypeValue = useSelector((state) => state.shirtType.shareType)
     
+
+
     // Data from render Card before processing
     let arr = []
     for (let count = 1; count <= difficultValue; count++) {  
       let item = {
         id: count,
         src: `/images/${count}.jpg`,
+        frontSrc: `/images/${shiftTypeValue}.jpg`
       }
       arr.push(item)
     }

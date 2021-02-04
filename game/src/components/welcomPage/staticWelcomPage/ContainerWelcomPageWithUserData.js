@@ -20,7 +20,7 @@ export default function ContainerWelcomPageWithUserData() {
             let data = event.target.value
             dispatch(shareType(data))
         }
-    const typesName= ['STAR WARS', 'MARVEL' , 'WEB' ]
+    const typesName= ['starWars', 'marvel' , 'ricMorti' ]
         
 
     return (

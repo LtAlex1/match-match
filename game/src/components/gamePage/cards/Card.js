@@ -10,6 +10,7 @@ export default function Card({obj}) {
 // 
 	// obj.id + flip(true/false)
 	const state = useSelector(state => state.flipReducer.id)
+	const typeShirt = useSelector(state => state.shirtType.shareType)
 	const dispatch = useDispatch()
 
 	const arr = []
@@ -25,14 +26,14 @@ export default function Card({obj}) {
 			dispatch(flipCheck(obj.id,flip))
 			 }}>	
 		
-		<div className='front'>
-            <div className='flashCard-options'>
-				FRONT
-				{obj.id}
+		<div className='front' style = {{background: obj.frontSrc ,backgroundPosition: 'center'}}>
+		
+            <div className='flashCard-options' >
+			<img src={obj.frontSrc}/>
             </div>
         </div>
 
-        <div className ='back' style = {{background: obj.src ,backgroundPosition: 'center', zIndex: 100}}>   
+        <div className ='back' style = {{background: obj.src ,backgroundPosition: 'center'}}>   
 			<img src={obj.src}/>
         </div>
 

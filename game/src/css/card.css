@@ -8,7 +8,7 @@
 .card-grid {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
 }
 
@@ -24,8 +24,8 @@
   transition: 150ms;
   cursor: pointer;
   transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
-  width: 150px;
-  height: 150px;
+  width: 220px;
+  height: 300px;
 }
 
 .card:hover {
@@ -35,6 +35,7 @@
 
 .card.flip {
   --rotate-y: 180deg;
+  
 }
 
 .card .front {
@@ -45,7 +46,8 @@
 .card .front,
 .card .back {
   position: absolute;
-  padding: 1rem;
+
+  /* padding: 1rem; */
   backface-visibility: hidden;
 }
 
