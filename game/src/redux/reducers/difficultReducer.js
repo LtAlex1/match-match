@@ -1,7 +1,8 @@
 import {CHANGE_DIFFICULT} from '../actions/actionCreator'
 
 const initialState = {
-    level: '8'
+    level: '8',
+    
 }
 
 const changeDifficultLevelReducer = (state = initialState,action)=>{
