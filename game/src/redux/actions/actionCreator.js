@@ -3,12 +3,12 @@ export const SHARE_TYPE = 'SHARE_TYPE'
 export const STORAGE_FULLNES = 'STORAGE_FULLNES'
 //---------------------------
 export const FLIP_CHECK = 'FLIP_CHECK'
+export const ARRAY_STORAGE = 'ARRAY_STORAGE'
 
-export function flipCheck(flipId,flip){
+export function flipCheck(obj){
     return {
         type : FLIP_CHECK,
-        flipId: flipId,
-        flip: flip,
+        obj: obj,
 
     }
 }
@@ -28,11 +28,16 @@ export function shareType(type){
     }
 }
 
-
 export function storageFullness(type){
     return {
         type: STORAGE_FULLNES,
         payload: type
+    }
+}
+export function arrayStorage(array){
+    return {
+        type: ARRAY_STORAGE,
+        payload: array
     }
 }
 

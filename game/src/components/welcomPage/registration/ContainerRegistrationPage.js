@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import ContainerWelcomPageWithUserData from '../staticWelcomPage/ContainerWelcomPageWithUserData'
 import RegistrationForm from './RegistrationForm'
+
+import { useHistory } from 'react-router-dom'
+import {storageFullness} from '.././../../redux/actions/actionCreator'
+import { useDispatch  } from 'react-redux'
 
 export default function ContainerRegistrationPage() {
 
@@ -33,6 +37,22 @@ let handleChangeRegistrationForm = (event)=> {
             localStorage.setItem(key, value)  
         }
 
+
+        const history = useHistory()
+        let dispatch = useDispatch()
+    //   ==============================LOCAL GET && SET=========================================      
+      
+        useEffect(()=>{
+            let data = JSON.parse(localStorage.getItem("firstName"))
+            dispatch(storageFullness(data ))
+            console.log(data)
+            if(data){
+                history.push('/welcome')
+            } 
+            else{
+                history.push('/')
+            }
+        },[])
 
     return (
         <div>
