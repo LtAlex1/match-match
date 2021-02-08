@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import StepsCount from "./StepsCount";
 import Timer from './Timer'
-
+import {resetTimer} from '../../../redux/actions/actionCreator'
 
 
 export default function ContainerControlComponent(){
-    const [currentSecond,SetCurrenSecond] = useState(0)
+    const dispatch = useDispatch()
+    const state = useSelector(state => state.resetTimer.count)
+    const [currentSecond,setCurrenSecond] = useState(0)
 
     useEffect(()=>{
         const addSecondInterval = setInterval(() => {
-                SetCurrenSecond(currentSecond + 1)
+                setCurrenSecond(currentSecond + 1)
         },1000)
 
         return () => {
@@ -17,8 +20,13 @@ export default function ContainerControlComponent(){
         }
     },[currentSecond])
 
+    useEffect(()=>{
+        setCurrenSecond(state)
+        dispatch(resetTimer(null))
+    },[state])
+
     return(
-        <div>
+        <div className='counters__items'>
             <Timer currentSecond = {currentSecond}/>
             <StepsCount/>
         </div>

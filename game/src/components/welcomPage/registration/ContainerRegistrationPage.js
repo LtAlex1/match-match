@@ -4,10 +4,11 @@ import RegistrationForm from './RegistrationForm'
 
 import { useHistory } from 'react-router-dom'
 import {storageFullness} from '.././../../redux/actions/actionCreator'
-import { useDispatch  } from 'react-redux'
+import { useDispatch ,useSelector } from 'react-redux'
+import Header from '../Header'
 
 export default function ContainerRegistrationPage() {
-
+const state = useSelector(state => state.fullnes.filed)  
 // =============================WORK WITH LOCAL======================================
 let handleChangeRegistrationForm = (event)=> {
     const target = event.target
@@ -44,7 +45,7 @@ let handleChangeRegistrationForm = (event)=> {
       
         useEffect(()=>{
             let data = JSON.parse(localStorage.getItem("firstName"))
-            dispatch(storageFullness(data ))
+            dispatch(storageFullness(data))
             console.log(data)
             if(data){
                 history.push('/welcome')
@@ -55,9 +56,12 @@ let handleChangeRegistrationForm = (event)=> {
         },[])
 
     return (
-        <div>
-            <RegistrationForm handleChange= {handleChangeRegistrationForm}/>
+        <div className='container'>
+            {state?'':<Header/>}
+        <div className='main'>
+            <RegistrationForm handleChange= {handleChangeRegistrationForm}/>          
             <ContainerWelcomPageWithUserData/>
         </div>
+        </div>    
     )
 }

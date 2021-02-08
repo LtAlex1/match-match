@@ -1,18 +1,20 @@
-import React, { memo, useCallback, useEffect} from 'react'
+import React, { memo, useCallback, useEffect, useState} from 'react'
 import {useSelector,useDispatch}  from 'react-redux'
 import {Card} from './Card'
-import '../../../css/card.css'
-import  {arrayStorage} from '../../../redux/actions/actionCreator'
 
+import  {arrayStorage, flipCheck , flipAction} from '../../../redux/actions/actionCreator'
 
 
 
 
  function ContainerCardInner(){
   const difficultValue = useSelector((state) => state.difficultReducer.level)
+  const difficultColumn = useSelector((state) => state.difficultReducer.columnCount)
   const shiftTypeValue = useSelector((state) => state.shirtType.shareType)
-  const arrayOfInvertedCards =  useSelector(state => state.flipReducer)
 
+  const arrayOfInvertedCards =  useSelector(state => state.flipReducer)
+  const flipActionState = useSelector(state=> state.flipAction.bullean)
+  let dispatch = useDispatch()
  //-------------------------KEY AND REPEAT--------------------------------------------
 
 
@@ -43,6 +45,7 @@ import  {arrayStorage} from '../../../redux/actions/actionCreator'
     },[difficultValue,shiftTypeValue])
 
   
+
   // --------------------WORK RANDOMIZER------------------------------
 
   const shuffleConcatAray = useCallback(()=>{
@@ -59,27 +62,36 @@ import  {arrayStorage} from '../../../redux/actions/actionCreator'
   },[arrayOfRepeatingCardWithKey])
   
 
-// useEffect(()=>{
+  //-------------------------------Render array-------------------------------------------
+  // function setFlipFunc(){
+  //   dispatch(flipAction(!flipActionState))
+  // }
+    //
 
-// },[arrayOfInvertedCards.length === 2])
 
-
-  //--------------------------------------------------------------------------
- 
   const finalArrayFromRender = useCallback(()=>{
   const arrayUp = shuffleConcatAray()
-  const cardList = arrayUp.map((item)=>  <Card obj ={item} />)
+  const cardList = arrayUp.map((item)=>  <Card obj ={item}/>)
   return cardList
   },[shuffleConcatAray])
 
 console.log(finalArrayFromRender())
 
-  let dispatch = useDispatch()
-  dispatch(arrayStorage(finalArrayFromRender))
 
-
+  // useEffect(()=>{ 
+  //   dispatch(arrayStorage(finalArrayFromRender))
+  // },[])
+  //--------------------------CSS---------------------------------------------
+ 
+let cardGrid = {
+  display:'grid',
+  justifyContent: 'space-around',
+  alignItems:'center',
+  gridTemplateColumns:`repeat(${difficultColumn}, minmax(180px, 0fr))`,
+  gap:'1rem'
+}
   return(
-      <div className='card-grid'>  
+      <div style={cardGrid}>  
         {finalArrayFromRender()}
       </div>
   )

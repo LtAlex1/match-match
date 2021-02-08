@@ -1,8 +1,8 @@
 import React, {memo, useEffect, useState} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {flipCheck} from '../../../redux/actions/actionCreator'
 
-
+//ВЫНЕСИ ЛОГИКУ ЗА КОМПОНЕНТУ
  function CardInner({obj}) {
 	const dispatch = useDispatch()
 	const [flip,setFlip]=useState(false)

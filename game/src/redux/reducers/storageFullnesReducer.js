@@ -2,7 +2,7 @@ import {STORAGE_FULLNES} from '../actions/actionCreator'
 
 
 const initialState = {
-    filed: 'false'
+    filed: ''
 }
 
 export default function storageFullness(state = initialState, action) {
