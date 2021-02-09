@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function ShirtType({typesName,typeChangeClickEvent}){
     
     return(
-     <button value ={typesName} onClick={typeChangeClickEvent}>{typesName}</button>
+     <button key={typesName} value ={typesName} onClick={typeChangeClickEvent}>{typesName}</button>
     )
 }
 

@@ -1,28 +1,16 @@
-import React, {memo, useEffect, useState} from 'react'
-import {useDispatch} from 'react-redux'
-import {flipCheck} from '../../../redux/actions/actionCreator'
+import React  from 'react'
+
+
 
 //ВЫНЕСИ ЛОГИКУ ЗА КОМПОНЕНТУ
- function CardInner({obj}) {
-	const dispatch = useDispatch()
-	const [flip,setFlip]=useState(false)
-
-	useEffect(()=>{
-		if(flip === true){
-			
-			dispatch(flipCheck(obj))
-			console.log(obj)
-		}
-	},[flip])
-//-------------------------------------------------
+export default function Card({handleClick,classNameCard,obj}) {
 	
 
+
 	return (
-	<div className={`card ${flip ? 'flip' : ''} ${obj.id}`}
-			 onClick={()=>{setFlip(!flip)}}>	
+	 <div className={classNameCard} onClick={handleClick}>	
 		
 		<div className='front' style = {{background: obj.frontSrc}}>
-		
             <div className='flashCard-options' >
 			<img src={obj.frontSrc}/>
             </div>
@@ -31,9 +19,12 @@ import {flipCheck} from '../../../redux/actions/actionCreator'
         <div className ='back' style = {{background: obj.src }}>   
 			<img src={obj.src}/>
         </div>
-
 	</div>
 	)
 }
 
-export const Card = memo(CardInner)
+
+
+
+
+{/* <div className={`card ${flip ? 'flip' : ''} ${obj.id}`} >	 */}

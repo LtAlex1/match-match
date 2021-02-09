@@ -12,7 +12,6 @@ const changeDifficultLevelReducer = (state = initialState,action)=>{
             return {
                 ...state,
                 level: action.payload,
-
                 columnCount:action.columnCount
             }
     }

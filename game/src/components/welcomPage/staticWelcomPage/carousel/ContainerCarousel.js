@@ -6,7 +6,8 @@ export default function ContainerCarousel() {
     for(let number=1;number<4;number++){
     let item = {
         id: number,
-        src: `/images/carousel/${number}.jpg`
+        src: `/images/carousel/${number}.jpg`,
+        key: number
     }
     arr.push(item)   
     }

@@ -3,8 +3,27 @@ export const SHARE_TYPE = 'SHARE_TYPE'
 export const STORAGE_FULLNES = 'STORAGE_FULLNES'
 export const FLIP_CHECK = 'FLIP_CHECK'
 export const FLIP_ACTION = 'FLIP_ACTION'
-export const ARRAY_STORAGE = 'ARRAY_STORAGE'
 export const RESET_TIMER = 'RESET_TIMER'
+export const INIT_CARDS = 'INIT_CARDS'
+export const CARD_SELECTED = 'CARD_SELECTED'
+
+
+
+export function initCardsArray(array){
+    return {
+        type: INIT_CARDS,
+        payload: array 
+    }
+}
+
+export function cardSelected(check,secondCheck){
+    return {
+        type: CARD_SELECTED,
+        payload: {
+            check,secondCheck
+        }       
+    }
+}
 
 export function flipCheck(obj){
     return {
@@ -41,12 +60,7 @@ export function storageFullness(type){
         payload: type
     }
 }
-export function arrayStorage(array){
-    return {
-        type: ARRAY_STORAGE,
-        payload: array
-    }
-}
+
 
 export function resetTimer(count){
     return {
