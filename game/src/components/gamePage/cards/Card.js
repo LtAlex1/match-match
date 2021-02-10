@@ -1,9 +1,9 @@
 import React  from 'react'
-
+import PropTypes from 'prop-types'
 
 
 //ВЫНЕСИ ЛОГИКУ ЗА КОМПОНЕНТУ
-export default function Card({handleClick,classNameCard,obj}) {
+ function Card({handleClick,classNameCard,obj}) {
 	
 
 
@@ -23,8 +23,11 @@ export default function Card({handleClick,classNameCard,obj}) {
 	)
 }
 
+export default Card
 
 
-
-
-{/* <div className={`card ${flip ? 'flip' : ''} ${obj.id}`} >	 */}
+Card.propTypes = {
+	handleClick: PropTypes.func.isRequired,
+	className:PropTypes.object.isRequired,
+	obj:PropTypes.object.isRequired
+}

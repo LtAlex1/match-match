@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Timer({currentSecond}) {
     return( 
         <div className=  "counters__items counters__items--timer">
-            <span> Секунды : {currentSecond} </span>
+            <span> Seconds : {currentSecond} </span>
         </div>
     )
 }

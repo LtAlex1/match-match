@@ -506,27 +506,7 @@ button:hover {
   animation-timing-function: linear;
 }
 
-/* .header h2{
-  position: relative;
-  top: 80px;
-  margin-left: 20px;
-  font-family: 'Indie Flower', cursive;
-  font-weight: 100;
-  font-size: 140px;
-  color: #fff;
-  text-shadow: 
-  0 0 10px rgba(255,255,255,.8),
-  0 0 20px rgba(255,255,255,.8),
-  0 0 22px rgba(255,255,255,.8),
-  0 0 40px rgba(219,66,217,.8),
-  0 0 60px rgba(219,66,217,.8),
-  0 0 80px rgba(219,66,217,.8),
-  0 0 100px rgba(219,66,217,.5),
-  0 0 140px rgba(219,66,217,.5),
-  0 0 200px rgba(219,66,217,.5);
-  animation: neon 3s infinite;
-  animation-timing-function: linear;
-} */
+
 
 /* ----------------------------buttons__items-------------------------------------- */
 

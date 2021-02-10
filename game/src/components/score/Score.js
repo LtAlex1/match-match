@@ -1,9 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
-export default function Score({score}) {
+ function Score({score}) {
     return (
         <div>
             <span>Top score:{score}</span>
         </div>
     )
+}
+
+export default Score
+
+Score.propTypes ={
+    score: PropTypes.number.isRequired
 }

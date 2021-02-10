@@ -9,7 +9,7 @@ export default function containerScore() {
     array.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
     }
     let numberArray = array.filter(item=> typeof item ===  'number')
-    let result = Math.max.apply(null, numberArray)
+    let result = Math.min.apply(null, numberArray)
 
 
 

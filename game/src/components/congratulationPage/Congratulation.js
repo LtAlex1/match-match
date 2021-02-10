@@ -15,7 +15,7 @@ function Congratulation({handleClick, name}) {
 }
 
 Congratulation.propTypes = {
-    score: PropTypes.number,
+    handleClick: PropTypes.func.isRequired,
     name: PropTypes.string,
 }
 

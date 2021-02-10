@@ -11,7 +11,7 @@ function ResetButton({resetButton}) {
 }
 
 ResetButton.propTypes = {
-    resetButton: PropTypes.func
+    resetButton: PropTypes.func.isRequired
 }
 
 export default ResetButton

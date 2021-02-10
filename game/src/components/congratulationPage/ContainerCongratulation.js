@@ -1,6 +1,6 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import {  useHistory } from 'react-router'
+import {useDispatch} from 'react-redux'
+import {useHistory} from 'react-router'
 import Congratulation from './Congratulation'
 import {deleatData} from '../../redux/actions/actionCreator'
 
