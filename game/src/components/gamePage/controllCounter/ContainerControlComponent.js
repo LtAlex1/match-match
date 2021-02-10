@@ -8,6 +8,7 @@ import {resetTimer} from '../../../redux/actions/actionCreator'
 export default function ContainerControlComponent(){
     const dispatch = useDispatch()
     const state = useSelector(state => state.resetTimer.count)
+    const click = useSelector(state => state.mainGameReducer.click)
     const [currentSecond,setCurrenSecond] = useState(0)
 
     useEffect(()=>{
@@ -28,7 +29,7 @@ export default function ContainerControlComponent(){
     return(
         <div className='counters__items'>
             <Timer currentSecond = {currentSecond}/>
-            <StepsCount/>
+            <StepsCount currentClick ={click}/>
         </div>
     )
 }

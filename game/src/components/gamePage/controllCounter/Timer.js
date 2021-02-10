@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 function Timer({currentSecond}) {
     return( 
-        <div className=  "counters__items--timer">
-            <h3> Секунды : {currentSecond} </h3>
+        <div className=  "counters__items counters__items--timer">
+            <span> Секунды : {currentSecond} </span>
         </div>
     )
 }

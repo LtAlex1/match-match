@@ -7,6 +7,7 @@ import resetTimerReducer from './resetTimerReducer'
 import flipAction from './flipActon'
 import mainGameReducer from './mainGameReducer'
 
+
 const rootReducers = combineReducers({
     difficultReducer: changeDifficultLevelReducer,
     shirtType: hareTypeReducer,

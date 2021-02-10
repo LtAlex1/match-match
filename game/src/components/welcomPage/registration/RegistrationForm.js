@@ -30,7 +30,9 @@ function RegistrationForm({handleChange}){
                     type="email" 
                     name ="emailName"
                     onChange={handleChange}
-                    placeholder="Enter your mail" />
+                    placeholder="Enter your mail"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                    required />
             </div>
         </form>  
         </div>      

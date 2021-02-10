@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch,useSelector, } from 'react-redux'
 import { useHistory } from 'react-router'
 import ContainerHeaderComponets from '../header/ContainerHeaderComponets'
@@ -10,12 +10,12 @@ import Rules from './Rules'
 import StartGame from './StartGameButton'
 import FromDifficult from '../hints/FromDifficult'
 import FromTypeShirt from '../hints/FromTypeShirt'
-import {changeDifficult} from '../../../redux/actions/actionCreator'
-import {shareType} from '../../../redux/actions/actionCreator'
+import {shareType,setData,changeDifficult} from '../../../redux/actions/actionCreator'
 import Animation from '../../Animation'
 
 
 export default function ContainerWelcomPageWithUserData() {
+   
     const state = useSelector(state => state.fullnes.filed) 
     const dispatch = useDispatch()
 
@@ -37,7 +37,9 @@ export default function ContainerWelcomPageWithUserData() {
             default:
                 break;
         }    
-    }      
+    }
+   
+
 
     //ShareType
         let typeChangeClickEvent = (event)=>{

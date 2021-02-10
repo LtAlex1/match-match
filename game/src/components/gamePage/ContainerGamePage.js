@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import {useDispatch, useSelector } from 'react-redux'
 import ContainerControlComponent from '../gamePage/controllCounter/ContainerControlComponent'
 import ContainerHeaderComponets from '../welcomPage/header/ContainerHeaderComponets'
 import ContainerCard from './cards/containerCard'
 import ContainerResetButton from './resetItems/resetButton/ContainerResetButton'
 import StartButton from './resetItems/startButton/StartButton'
-import {initCardsArray,cardSelected} from '../../redux/actions/actionCreator'
+import {shuffleArray} from '../../redux/actions/actionCreator'
 
 function ContainerGamePage(){
     const shiftTypeValue = useSelector((state) => state.shirtType.shareType)
     const difficultValue = useSelector((state) => state.difficultReducer.level)
     const difficultColumn = useSelector((state) => state.difficultReducer.columnCount)
+    const shuffleOnClickResetButton = useSelector((state)=> state.mainGameReducer.shuffle)
+    
 
     const matchedCardValue = useSelector((state)=> state.mainGameReducer.matchedCards)
     const selectedCardsValue = useSelector((state)=> state.mainGameReducer.selectedCards)
+    const clickCount = useSelector((state)=> state.mainGameReducer.click)
     
 
 
     const [contentFromRender, setContentFromRender] = useState([]);    
-    const dispatch = useDispatch()    
-
+    const dispatch = useDispatch() 
 
 
 useEffect(() => {
@@ -55,6 +57,7 @@ useEffect(() => {
       return  concatArrayBeforeShuffle
     }
 
+
     function shuffleConcatArray(){
       let concatArray= arrayOfRepeatingCardWithKey()
       console.log('rerender_2')
@@ -68,23 +71,23 @@ useEffect(() => {
       return concatArray;
     }
     const readyShuffleConcatArray = shuffleConcatArray()
+   
 console.log(readyShuffleConcatArray)
 
-   
+dispatch(shuffleArray(false))
 setContentFromRender(readyShuffleConcatArray)
 
-},[])
-useEffect(() => {
-  dispatch(initCardsArray(contentFromRender))
-}, [])
+},[shuffleOnClickResetButton])
+
 
 
 let cardGrid = {
     display:'grid',
+    marginTop:'90px',
     justifyContent: 'space-around',
     alignItems:'center',
     gridTemplateColumns:`repeat(${difficultColumn}, minmax(180px, 0fr))`,
-    gap:'1rem'
+    gap:'3rem'
   }
 
 return (
@@ -99,7 +102,8 @@ return (
             <ContainerCard shuffleConcatArray={contentFromRender} 
                            gridClasses ={cardGrid} 
                            matchedCard={matchedCardValue} 
-                           selectedCards={selectedCardsValue}/>
+                           selectedCards={selectedCardsValue}
+                           clickCount={clickCount}/>
         </div>
         <div className='buttons__items'>
             <div className='reset-button'>

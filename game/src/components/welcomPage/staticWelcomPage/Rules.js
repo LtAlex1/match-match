@@ -8,7 +8,7 @@ function Rules(){
     return (
         // wrapper
         <div className="text-wrapper">
-        <p>As in fight club, there are 4 rules:</p>   
+        <h2>As in fight club, there are 4 rules:</h2>   
              {/*single-box  */}
             <div className='text-wrapper__box'>
                 <h3>The first rule of MMG is:</h3>

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function StepsCount() {
+export default function StepsCount({currentClick}) {
     return (
-        <div className='counters__items--steps'>
-            <span> Step count : <strong>0</strong> </span>
+        <div className='counters__items counters__items--steps'>
+            <span> Step count : {currentClick} </span>
         </div>
     )
 }

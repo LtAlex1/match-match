@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
     
     return (
         <div className='header'>
-            <h1>Welcom {header? header : ''} to MMG</h1>                     
+            <h2>Welcom {header? header : ''} to MMG</h2>                     
         </div>
     )
 }

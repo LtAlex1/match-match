@@ -6,7 +6,10 @@ export const FLIP_ACTION = 'FLIP_ACTION'
 export const RESET_TIMER = 'RESET_TIMER'
 export const INIT_CARDS = 'INIT_CARDS'
 export const CARD_SELECTED = 'CARD_SELECTED'
-
+export const CLICK_COUNTER ='CLICK_COUNTER'
+export const SHUFFLE_ARRAY ='SHUFFLE_ARRAY'
+export const DELEAT_DATA ='DELEAT_DATA'
+export const SET_DATA ='SET_DATA'
 
 
 export function initCardsArray(array){
@@ -34,7 +37,7 @@ export function flipCheck(obj){
 export function flipAction(bullean){
     return {
         type : FLIP_ACTION,
-        bullean: bullean,
+        payload: bullean,
     }
 }
 
@@ -66,6 +69,29 @@ export function resetTimer(count){
     return {
         type: RESET_TIMER,
         payload: count
+    }
+}
+export function clickCounter(count){
+    return {
+        type: CLICK_COUNTER,
+        payload: count
+    }
+}
+export function shuffleArray(bullean){
+    return {
+        type: SHUFFLE_ARRAY,
+        payload: bullean
+    }
+}
+export function deleatData(){
+    return {
+        type: DELEAT_DATA
+    }
+}
+export function setData(array){
+    return {
+        type: SET_DATA,
+        payload: array
     }
 }
 

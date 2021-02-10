@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function ResetButton({resetButton}) {
     return (
-        <div className='reset-button__item--button'>
+        <div className='reset-button__item--button  header'>
             <button onClick ={resetButton}> RESTART </button>
         </div>
     )
