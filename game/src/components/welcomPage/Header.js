@@ -1,12 +1,17 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
+import PropTypes from 'prop-types'
 
-export default function Header() {
-    const state = useSelector(state => state.fullnes.filed)
+ function Header({header}) {
+    
     return (
-        <div>
-            {console.log(state)}
-             <h1> Welcom {state} to MMG</h1>
+        <div className='header'>
+            <h2>Welcom {header? header : ''} to MMG</h2>                     
         </div>
     )
 }
+
+Header.propTypes = {
+    header: PropTypes.string
+}
+
+export default Header

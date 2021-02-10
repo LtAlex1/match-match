@@ -1,13 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
-function ShirtType({typesName, clickEvent}){
+function ShirtType({typesName,typeChangeClickEvent}){
     
-const buttonItem = typesName.map((item)=><button value={item} onClick={clickEvent}>{item}</button>)
-
     return(
-        <div>  
-            {buttonItem}
-        </div>
+     <button key={typesName} value ={typesName} onClick={typeChangeClickEvent}>{typesName}</button>
     )
 }
+
+ShirtType.propTypes = {
+    typesName: PropTypes.string.isRequired,
+    typeChangeClickEvent: PropTypes.func.isRequired
+}
+
 export default ShirtType

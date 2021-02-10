@@ -1,17 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
-
-export default function Difficult(props){
+function Difficult({difficultChandleChange}){
 
     return (
-         <form >
-            <label>Difficult:
-                <select  onChange={props.handleChange}>
-                        <option value='8'>Easy</option>
-                        <option value="18">Medium</option>
-                        <option value="32">Hard</option> 
+         <form className="dropdown__form">
+                <select  className='dropdown__form--select' onChange={difficultChandleChange}>
+                        <option className='dropdown__form--option' value='8'  column= '4'>Easy</option>
+                        <option className='dropdown__form--option' value="18" column= '6'>Medium</option>
+                        <option className='dropdown__form--option' value="32" column= '8'>Hard</option> 
                 </select>
-            </label>
         </form>
     )
 }
+
+Difficult.propTypes = {
+    difficultChandleChange: PropTypes.func.isRequired
+}
+
+export default  Difficult

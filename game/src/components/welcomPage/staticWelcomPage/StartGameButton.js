@@ -1,32 +1,21 @@
-import React, {useEffect} from 'react'
-import {useSelector} from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import React from 'react'
+import PropTypes from 'prop-types';
 
 
-
-function StartGame(){
-const difficult = useSelector(state => state.difficultReducer.level)    
-const shirt = useSelector(state => state.shirtType.shareType) 
-{console.log(shirt)}   
-const history = useHistory()
-
-function handleClick(){
+function StartGame({navigationHandleClick, difficult,shirt,history}){
     
-    if(difficult && shirt !== ""){
-        history.push('/game')
-    }else{ alert('ЗАПОЛНИТЕ ВСЕ ПОЛЯ')}
-}
-
-useEffect(() => {
-
-}, [difficult,shirt])
-
     return(
         <div>
-            <button onClick={handleClick}>Start Game</button>
+            <button onClick={navigationHandleClick}>Start </button>
         </div>
     )
 }
-//44
+
+StartGame.propTypes = {
+    navigationHandleClick: PropTypes.func.isRequired,
+    difficult:PropTypes.string.isRequired,
+    shirt:PropTypes.string.isRequired,
+    history:PropTypes.func.isRequired
+}
 
 export default StartGame
