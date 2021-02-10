@@ -6,6 +6,7 @@ import ContainerCard from './cards/containerCard'
 import ContainerResetButton from './resetItems/resetButton/ContainerResetButton'
 import StartButton from './resetItems/startButton/StartButton'
 import {shuffleArray} from '../../redux/actions/actionCreator'
+import ContainerStartButton from './resetItems/startButton/ContainerStartButton'
 
 function ContainerGamePage(){
     const shiftTypeValue = useSelector((state) => state.shirtType.shareType)
@@ -26,7 +27,6 @@ function ContainerGamePage(){
 
 useEffect(() => {
   function arrayOfRepeatingCardWithKey() {
-    console.log('rerender_1')
     let arr = []
     for (let count = 1; count <= difficultValue; count++) {  
       let item = {
@@ -60,7 +60,6 @@ useEffect(() => {
 
     function shuffleConcatArray(){
       let concatArray= arrayOfRepeatingCardWithKey()
-      console.log('rerender_2')
       let j, temp;
       for(let i = concatArray.length - 1; i > 0; i--){
         j = Math.floor(Math.random()*(i + 1));
@@ -72,7 +71,7 @@ useEffect(() => {
     }
     const readyShuffleConcatArray = shuffleConcatArray()
    
-console.log(readyShuffleConcatArray)
+
 
 dispatch(shuffleArray(false))
 setContentFromRender(readyShuffleConcatArray)
@@ -110,7 +109,7 @@ return (
                 <ContainerResetButton/>
             </div>
             <div className='start-button'>
-                <StartButton/>
+                <ContainerStartButton/>
             </div>
         </div>
     </div>

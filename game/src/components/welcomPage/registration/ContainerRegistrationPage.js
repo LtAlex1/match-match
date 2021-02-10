@@ -46,7 +46,6 @@ let handleChangeRegistrationForm = (event)=> {
         useEffect(()=>{
             let data = JSON.parse(localStorage.getItem("firstName"))
             dispatch(storageFullness(data))
-            console.log(data)
             if(data){
                 history.push('/welcome')
             } 

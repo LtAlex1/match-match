@@ -5,7 +5,7 @@ function Congratulation({handleClick, name}) {
     return (
         <div className='congratulation__items header'>
             <div className='congratulation__items--title'>
-                <h2>Congratulation {name}</h2>
+                <h2>Congratulations {name}</h2>
             </div>
             <div className='congratulation__items--button'>
                 <button onClick={handleClick}>SCORE </button>

@@ -13,25 +13,25 @@ function Rules(){
             <div className='text-wrapper__box'>
                 <h3>The first rule of MMG is:</h3>
                 <p>
-                    Select two cards to try to match the pictures
+                    Select two cards to try to match pictures
                 </p>
             </div>
             <div className='text-wrapper__box'>
                 <h3>The second rule of MMG is:</h3>
                 <p>
-                If you match the pictures you can go again
+                If pictures match you can try open card again
                 </p>
             </div>
             <div className='text-wrapper__box'>
                 <h3>Third rule of MMG is: </h3>
                 <p>
-                If they dont`t match it is the computer turn them
+                If they dont`t match the computer well turn them up
                 </p>
             </div>
             <div className='text-wrapper__box'>
                 <h3>Fourth rule of MMG is:</h3>
                 <p>
-                The player that finds all pairs wins!
+                The player who will  find all pairs win!
                 </p>
             </div>
 

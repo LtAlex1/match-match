@@ -10,5 +10,5 @@ export default function StepsCount({currentClick}) {
 }
 
 StepsCount.propTypes = {
-    currentClick: PropTypes.string
+    currentClick: PropTypes.number
 }

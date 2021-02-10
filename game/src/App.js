@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/app.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import ContainerRegistrationPage from './components/welcomPage/registration/ContainerRegistrationPage';
 import ContainerWelcomPageWithUserData from './components/welcomPage/staticWelcomPage/ContainerWelcomPageWithUserData';
 import ComponentNotFound from './components/welcomPage/ComponentNotFound';
@@ -21,7 +21,7 @@ function App() {
         <Route path='/game' component={ContainerGamePage}/>
         <Route path='/congratulation' component={ContainerCongratulation}/>
         <Route path='/score' component={containerScore}/>
-        
+
         <Route component ={ComponentNotFound}/>
       </Switch>      
     </Router>

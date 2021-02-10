@@ -28,6 +28,6 @@ export default Card
 
 Card.propTypes = {
 	handleClick: PropTypes.func.isRequired,
-	className:PropTypes.object.isRequired,
+	className:PropTypes.object,
 	obj:PropTypes.object.isRequired
 }
