@@ -3,7 +3,7 @@ import React from 'react'
 export default function FromTypeShirt() {
     return (
         <div className='type-shirt__title title-discription'>
-           <h2>What card backs would you like to see?</h2>
+           <h2>Select a back of a card:</h2>
         </div>
     )
 }

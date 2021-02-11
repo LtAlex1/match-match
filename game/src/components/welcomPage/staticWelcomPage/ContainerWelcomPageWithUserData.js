@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import { useDispatch,useSelector, } from 'react-redux'
 import { useHistory } from 'react-router'
 import ContainerHeaderComponets from '../header/ContainerHeaderComponets'
@@ -10,7 +10,7 @@ import Rules from './Rules'
 import StartGame from './StartGameButton'
 import FromDifficult from '../hints/FromDifficult'
 import FromTypeShirt from '../hints/FromTypeShirt'
-import {shareType,setData,changeDifficult} from '../../../redux/actions/actionCreator'
+import {shareType,changeDifficult,setValueToLocalStorage,} from '../../../redux/actions/actionCreator'
 import Animation from '../../Animation'
 
 
@@ -36,10 +36,20 @@ export default function ContainerWelcomPageWithUserData() {
                     break
             default:
                 break;
-        }    
+        }   
+         
+
     }
    
-
+    // PushAllValueToStore
+    useEffect(()=>{
+        let array = []
+        for(let i = 0, length = localStorage.length; i< length; i++){
+    
+        array.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
+        }
+        dispatch(setValueToLocalStorage(array))
+    },[])
 
     //ShareType
         let typeChangeClickEvent = (event)=>{

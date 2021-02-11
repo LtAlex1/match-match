@@ -7,6 +7,8 @@ import {storageFullness} from '.././../../redux/actions/actionCreator'
 import { useDispatch ,useSelector } from 'react-redux'
 import Header from '../Header'
 
+
+
 export default function ContainerRegistrationPage() {
 const state = useSelector(state => state.fullnes.filed)  
 // =============================WORK WITH LOCAL======================================
@@ -46,7 +48,6 @@ let handleChangeRegistrationForm = (event)=> {
         useEffect(()=>{
             let data = JSON.parse(localStorage.getItem("firstName"))
             dispatch(storageFullness(data))
-            console.log(data)
             if(data){
                 history.push('/welcome')
             } 

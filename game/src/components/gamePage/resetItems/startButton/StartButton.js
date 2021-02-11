@@ -1,13 +1,17 @@
 import React from 'react'
-import {useHistory } from 'react-router'
+import PropTypes from 'prop-types'
 
 
-export default function StartButton() {
+ function StartButton({handleClick}) {
 
-   const history = useHistory()
     return (
         <div className='start-button__item'>
-            <button onClick={()=>history.push('/')}> START </button>
+            <button onClick={handleClick}> START </button>
         </div>
     )
 }
+
+StartButton.propTypes ={
+    handleClick: PropTypes.func.isRequired,
+   }
+export default StartButton

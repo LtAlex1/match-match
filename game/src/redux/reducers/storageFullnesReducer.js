@@ -1,10 +1,11 @@
-import {STORAGE_FULLNES,CLICK_COUNTER,SET_DATA} from '../actions/actionCreator'
+import {STORAGE_FULLNES,CLICK_COUNTER,SET_DATA,SET_VALUE} from '../actions/actionCreator'
 
 
 const initialState = {
     filed: '',
     score:0,
-    data: []
+    data: [],
+    localStorageValue: []
 }
 
 export default function storageFullness(state = initialState, action) {
@@ -26,6 +27,12 @@ export default function storageFullness(state = initialState, action) {
                 ...state, 
                  data: action.payload   
                 
+            }
+        }
+        case SET_VALUE: {
+            return {
+                ...state,
+                localStorageValue: action.payload
             }
         }
         

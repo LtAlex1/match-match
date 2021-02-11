@@ -6,13 +6,12 @@ import ContainerWelcomPageWithUserData from './components/welcomPage/staticWelco
 import ComponentNotFound from './components/welcomPage/ComponentNotFound';
 import ContainerGamePage from './components/gamePage/ContainerGamePage';
 import ContainerCongratulation from './components/congratulationPage/ContainerCongratulation';
-import containerScore from './components/score/containerScore';
+import ContainerScore from './components/score/containerScore';
+import ContainerProfile from './components/profile/ContainerProfile';
+
 
 
 function App() {
-
-
-
   return (     
      <Router>
       <Switch>
@@ -20,8 +19,8 @@ function App() {
         <Route path='/welcome' component={ContainerWelcomPageWithUserData}/>
         <Route path='/game' component={ContainerGamePage}/>
         <Route path='/congratulation' component={ContainerCongratulation}/>
-        <Route path='/score' component={containerScore}/>
-        
+        <Route path='/score' component={ContainerScore}/>
+        <Route path='/profile' component={ContainerProfile}/>
         <Route component ={ComponentNotFound}/>
       </Switch>      
     </Router>

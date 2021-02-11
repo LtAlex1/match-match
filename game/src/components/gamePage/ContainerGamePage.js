@@ -4,7 +4,7 @@ import ContainerControlComponent from '../gamePage/controllCounter/ContainerCont
 import ContainerHeaderComponets from '../welcomPage/header/ContainerHeaderComponets'
 import ContainerCard from './cards/containerCard'
 import ContainerResetButton from './resetItems/resetButton/ContainerResetButton'
-import StartButton from './resetItems/startButton/StartButton'
+import ContainerStartButton from './resetItems/startButton/ContainerStartButton'
 import {shuffleArray} from '../../redux/actions/actionCreator'
 
 function ContainerGamePage(){
@@ -12,7 +12,6 @@ function ContainerGamePage(){
     const difficultValue = useSelector((state) => state.difficultReducer.level)
     const difficultColumn = useSelector((state) => state.difficultReducer.columnCount)
     const shuffleOnClickResetButton = useSelector((state)=> state.mainGameReducer.shuffle)
-    
 
     const matchedCardValue = useSelector((state)=> state.mainGameReducer.matchedCards)
     const selectedCardsValue = useSelector((state)=> state.mainGameReducer.selectedCards)
@@ -26,7 +25,6 @@ function ContainerGamePage(){
 
 useEffect(() => {
   function arrayOfRepeatingCardWithKey() {
-    console.log('rerender_1')
     let arr = []
     for (let count = 1; count <= difficultValue; count++) {  
       let item = {
@@ -60,7 +58,6 @@ useEffect(() => {
 
     function shuffleConcatArray(){
       let concatArray= arrayOfRepeatingCardWithKey()
-      console.log('rerender_2')
       let j, temp;
       for(let i = concatArray.length - 1; i > 0; i--){
         j = Math.floor(Math.random()*(i + 1));
@@ -72,12 +69,12 @@ useEffect(() => {
     }
     const readyShuffleConcatArray = shuffleConcatArray()
    
-console.log(readyShuffleConcatArray)
+
 
 dispatch(shuffleArray(false))
 setContentFromRender(readyShuffleConcatArray)
 
-},[shuffleOnClickResetButton])
+},[shuffleOnClickResetButton,difficultValue,shiftTypeValue])
 
 
 
@@ -110,7 +107,7 @@ return (
                 <ContainerResetButton/>
             </div>
             <div className='start-button'>
-                <StartButton/>
+                <ContainerStartButton/>
             </div>
         </div>
     </div>
