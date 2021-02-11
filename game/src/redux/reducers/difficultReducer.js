@@ -1,4 +1,4 @@
-import {CHANGE_DIFFICULT} from '../actions/actionCreator'
+import {CHANGE_DIFFICULT,REMOVE_DIFFICULT} from '../actions/actionCreator'
 
 const initialState = {
     level: '8',
@@ -13,6 +13,12 @@ const changeDifficultLevelReducer = (state = initialState,action)=>{
                 ...state,
                 level: action.payload,
                 columnCount:action.columnCount
+            }
+        case REMOVE_DIFFICULT:
+            return {
+                ...state,
+                level: '8',
+                columnCount: '4'  
             }
     }
     return state

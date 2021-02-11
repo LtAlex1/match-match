@@ -4,16 +4,14 @@ import ContainerControlComponent from '../gamePage/controllCounter/ContainerCont
 import ContainerHeaderComponets from '../welcomPage/header/ContainerHeaderComponets'
 import ContainerCard from './cards/containerCard'
 import ContainerResetButton from './resetItems/resetButton/ContainerResetButton'
-import StartButton from './resetItems/startButton/StartButton'
-import {shuffleArray} from '../../redux/actions/actionCreator'
 import ContainerStartButton from './resetItems/startButton/ContainerStartButton'
+import {shuffleArray} from '../../redux/actions/actionCreator'
 
 function ContainerGamePage(){
     const shiftTypeValue = useSelector((state) => state.shirtType.shareType)
     const difficultValue = useSelector((state) => state.difficultReducer.level)
     const difficultColumn = useSelector((state) => state.difficultReducer.columnCount)
     const shuffleOnClickResetButton = useSelector((state)=> state.mainGameReducer.shuffle)
-    
 
     const matchedCardValue = useSelector((state)=> state.mainGameReducer.matchedCards)
     const selectedCardsValue = useSelector((state)=> state.mainGameReducer.selectedCards)
@@ -76,7 +74,7 @@ useEffect(() => {
 dispatch(shuffleArray(false))
 setContentFromRender(readyShuffleConcatArray)
 
-},[shuffleOnClickResetButton])
+},[shuffleOnClickResetButton,difficultValue,shiftTypeValue])
 
 
 

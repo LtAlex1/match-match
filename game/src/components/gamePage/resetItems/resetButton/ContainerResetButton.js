@@ -8,9 +8,10 @@ export default function ContainerResetButton() {
     const dispatch = useDispatch()
     function resetButton(){
         dispatch(deleatData())
-       dispatch(resetTimer(0))
-       dispatch(clickCounter(0))
-       dispatch(shuffleArray(true))
+        dispatch(resetTimer(0))
+        dispatch(clickCounter(0))
+        dispatch(shuffleArray(true))
+        
     }
 
     return (
@@ -19,3 +20,5 @@ export default function ContainerResetButton() {
         </div>
     )
 }
+
+

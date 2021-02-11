@@ -10,7 +10,7 @@ import Rules from './Rules'
 import StartGame from './StartGameButton'
 import FromDifficult from '../hints/FromDifficult'
 import FromTypeShirt from '../hints/FromTypeShirt'
-import {shareType,changeDifficult,setValueToLocalStorage} from '../../../redux/actions/actionCreator'
+import {shareType,changeDifficult,setValueToLocalStorage,} from '../../../redux/actions/actionCreator'
 import Animation from '../../Animation'
 
 
@@ -36,10 +36,12 @@ export default function ContainerWelcomPageWithUserData() {
                     break
             default:
                 break;
-        }    
+        }   
+         
+
     }
    
-    //PushAllValueToStore
+    // PushAllValueToStore
     useEffect(()=>{
         let array = []
         for(let i = 0, length = localStorage.length; i< length; i++){

@@ -34,17 +34,11 @@ switch (action.type) {
         const selected = state.selectedCards.concat(
           state.cards.filter((item)=> item.check === action.payload.check && item.secondCheck === action.payload.secondCheck)  
         )
-        
-
-console.log(selected)
             if(selected.length === 2){
-            
-console.log(selected)
-console.log('selected.length === 2')
                  if(selected[0].value === selected[1].value){
-console.log('selected[0].value === selected[1].value')
+
                 const matched = state.matchedCards.concat(selected)
-console.log('matchedCards: matched')                                               
+                                              
                         return{
                             ...state,
                             matchedCards: matched,
@@ -59,13 +53,12 @@ console.log('matchedCards: matched')
                         }  
             }
                     if(selected.length > 2){
-console.log('selected.length > 2  => selectedCards = []') 
                         return {
                             ...state,
                             selectedCards: [],
                         }
                     }
-console.log('selectedCards: selected')
+
                     return {
                         ...state,
                         selectedCards: selected

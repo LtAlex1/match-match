@@ -1,7 +1,7 @@
 export const CHANGE_DIFFICULT = 'CHANGE_DIFFICULT'
 export const SHARE_TYPE = 'SHARE_TYPE'
-export const FLIP_CHECK = 'FLIP_CHECK'
-export const FLIP_ACTION = 'FLIP_ACTION'
+export const REMOVE_DIFFICULT ='REMOVE_DIFFICULT'
+
 // MAIN GAME PAGE
 export const RESET_TIMER = 'RESET_TIMER'
 export const INIT_CARDS = 'INIT_CARDS'
@@ -15,7 +15,7 @@ export const SET_VALUE ='SET_VALUE'
 export const STORAGE_FULLNES = 'STORAGE_FULLNES'
 
 
-
+// DIFFICULT
 export function changeDifficult(levelType,columnCount){
     return {
         type : CHANGE_DIFFICULT,
@@ -24,6 +24,14 @@ export function changeDifficult(levelType,columnCount){
       
     }
 } 
+export function removeDifficult(){
+    return {
+        type : REMOVE_DIFFICULT,      
+    }
+} 
+
+
+
 
 export function shareType(type){
     return {
@@ -32,20 +40,6 @@ export function shareType(type){
     }
 }
 
-// ?
-export function flipAction(bullean){
-    return {
-        type : FLIP_ACTION,
-        payload: bullean,
-    }
-}
-
-export function flipCheck(obj){
-    return {
-        type : FLIP_CHECK,
-        obj: obj,
-    }
-}
 // MAIN GAME
 export function resetTimer(count){
     return {

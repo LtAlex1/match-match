@@ -1,10 +1,19 @@
 import React from 'react'
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
+ 
 
-export default function Profile() {
+ function Profile() {
 
     return (
         <div className = 'header__items--images'>
-            <img src ={'../../..//images/gudok.jpg'}/>
+         <Link to='/profile'><img src ={'../../..//images/gudok.jpg'}/></Link>   
         </div>
     )
 }
+
+
+
+export default  Profile

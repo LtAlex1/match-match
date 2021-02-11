@@ -7,6 +7,8 @@ import {storageFullness} from '.././../../redux/actions/actionCreator'
 import { useDispatch ,useSelector } from 'react-redux'
 import Header from '../Header'
 
+
+
 export default function ContainerRegistrationPage() {
 const state = useSelector(state => state.fullnes.filed)  
 // =============================WORK WITH LOCAL======================================

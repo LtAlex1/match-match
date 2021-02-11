@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
- function Score({score}) {
+ function Score({score,handleClick}) {
     return (
-        <div>
-            <span>Top score:{score}</span>
+        <>
+        <div className='header'>
+            <h2>Top score:{score}</h2>
         </div>
+        <div>
+            <button onClick={handleClick}>Start</button>
+        </div>
+        </>
     )
 }
 
